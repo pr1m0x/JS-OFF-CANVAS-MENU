@@ -1,0 +1,94 @@
+:root {
+  --textColor: #031129;
+  --backgroundColor: #a5c2ad;
+  --menuTextColor: #9ebed0;
+  --menuTextHoverColor: #eaf0f3;
+  --menuBackgroundColor: #031129;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: var(--textColor);
+  background-color: var(--backgroundColor);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.off-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 30rem;
+  left: -30rem;
+  background-color: var(--menuBackgroundColor);
+  visibility: hidden;
+  transition: transform 0.2s ease;
+}
+
+.content-container {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  padding: 10rem 5rem;
+  max-width: 50rem;
+}
+
+.content-container h1 {
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+.offsite-is-open .off-container {
+  visibility: visible;
+}
+
+.offsite-is-open .content-container,
+.offsite-is-open .off-container {
+  transform: translateX(30rem);
+}
+
+button {
+  border: 2px solid var(--menuBackgroundColor);
+  background-color: var(--backgroundColor);
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+button:focus,
+.offsite-is-open button {
+  background-color: var(--textColor);
+  color: var(--backgroundColor);
+}
+
+.nav {
+  margin-top: 10rem;
+}
+
+.nav ul li a {
+  font-size: 2rem;
+  padding-left: 2.5em;
+  line-height: 5rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--menuTextColor);
+}
+
+.nav ul li a:hover {
+  color: var(--menuTextHoverColor);
+}
